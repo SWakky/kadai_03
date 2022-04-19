@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G'sACADEMY WHYME MEMO</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous">
+    </script>
+</head>
+<body class="base">
+    <div class="content">
+        <div class="padding">
+            <p style="color:white;">HELLO</p>
+        </div>
+    
+        <div id="anim_img_box" style="top: 0px">
+            <img id="anim_img" src="image/geek (1).png" style="width: 100%;"/> <!--初期画像を入れておくよ。置き換わる部分だよ-->
+        </div>
+    
+        <div id="anim_img_padding" class="padding">
+            このエリアは画像を動かすためにスクロールされますが、重なっているので見えません。<br>
+            このサイズはJavaScriptで変わります。
+        </div>
+        <div class="padding">
+            <p style="color:white">Let's start.</p>
+        </div>
+    </div>
+
+    <!-- jQueryはJSファイルの上に書く！！ ↓-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/geek.js"></script>
+</body>
+</html>
