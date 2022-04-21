@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,16 +10,73 @@
     </script>
 </head>
 <body class="base">
+    <div>
+        <h1>Always Remind WHY ME?</h1>
+    </div>
+    <div class="setumei">
+        <p>
+        自分は何を想ったのか？<br>
+        そのキーワードを上部の水色のハコに記す。<br>
+        想いの丈をベージュのハコにメモしよう。<br>
+        書けたら「SAVE」、全て叶えば「CLEAR」しよう。
+        </p>
+    </div>
+
+    <main>
+        <input type="text" id="key">
+        <textarea id="memo"></textarea>
+        <ul>
+            <li id="save">Save</li>
+            <li id="clear">Clear</li>
+        </ul>
+    </main>
+    <table id="list">
+    <!-- ここに追加データが挿入される -->
+    </table>
+    <script>
+    
+    //1.Save クリックイベント
+    $("#save").on("click",function(){
+        const key = $("#key").val();
+        const value = $("#memo").val();
+        localStorage.setItem(key,value);
+        const html = '<tr><th>'+key+'</th><td>'+value+'</td></tr>';
+        $("#list").append(html);
+    });
+    
+    //2.clear クリックイベント
+    $("#clear").on("click",function(){
+        localStorage.clear();
+        $("#list").empty();
+    });
+    
+    //3.ページ読み込み：保存データ取得表示
+    for(let i=0; i<localStorage.length; i++){
+        const key   = localStorage.key(i);
+        const value = localStorage.getItem(key);
+        const html = '<tr><th>'+key+'</th><td>'+value+'</td></tr>';
+        $("#list").append(html);
+    }
+    
+    </script>
+    
+
     <div class="content">
         <div class="padding">
-            <p style="color:white;">HELLO</p>
+            <p style="color:white;">
+                Always Ask "Why Me"?
+            </p>
+        </div>
+
+        <div class="scrolldown1">
+            <span>Scroll</span>
         </div>
     
         <div id="anim_img_box" style="top: 0px">
             <img id="anim_img" src="image/geek (1).png" style="width: 100%;"/> <!--初期画像を入れておくよ。置き換わる部分だよ-->
         </div>
     
-        <div id="anim_img_padding" class="padding">
+        <div id="anim_img_padding" class="padding" style="height: 700px;">
             このエリアは画像を動かすためにスクロールされますが、重なっているので見えません。<br>
             このサイズはJavaScriptで変わります。
         </div>
