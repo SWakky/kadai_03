@@ -1,4 +1,4 @@
-# 課題2 -localstorageを使おう-
+# 課題3 -localstorageを使おう-
 
 ## ①課題内容（どんな作品か）
 ・localstorageを用いたアプリを作ることが課題でした。が、
